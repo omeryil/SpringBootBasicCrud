@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "83219c2f-2d73-40ed-9da3-99117f30dcbd",
+		"name": "Z12-QueryTest",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "AddCollection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"collectionName\":\"user\",\r\n    \"content\":{\r\n        \"user_username\":\"de_ne_mem213\",\r\n        \"user_password\":\"12345678\",\r\n        \"role\":\"admin\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:5004/add/collection",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "5004",
+					"path": [
+						"add",
+						"collection"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteCollection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":\"62ec3def76294334896b4b75\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:5004/delete/collection",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "5004",
+					"path": [
+						"delete",
+						"collection"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateCollection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\": \"62ec3bd2d04ffa66fe9acd78\",\r\n    \"fields\": [\r\n        {\r\n            \"field\": \"user_username\",\r\n            \"value\": \"test\"\r\n        },\r\n         {\r\n            \"field\": \"user_password\",\r\n            \"value\": \"12348765\"\r\n        }\r\n    ]\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:5004/update/collection",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "5004",
+					"path": [
+						"update",
+						"collection"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetCollection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n     \"user_username\": \"test\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://{{ip}}:5004/get/collection",
+					"protocol": "http",
+					"host": [
+						"{{ip}}"
+					],
+					"port": "5004",
+					"path": [
+						"get",
+						"collection"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": [
+			{
+				"key": "token",
+				"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6MTE3MCwiY2xpZW50SWQiOiI2MWZlNGMwMjhlMmM0Y2FiNmY3Mzg1MTkiLCJyb2xlIjoiYWRtaW4iLCJhcHBsaWNhdGlvbklkIjoiZmYyZjc0MzQtZjk2YS00ZjY2LWI5ZjktMjNjNTFmYzUyN2Y4IiwiZXhwIjoxNjU5NTc1OTIzfQ.IbIM4xEVj32ncG05wJUAty6WuKSLgZC81I2TpPA3eMg",
+				"type": "string"
+			}
+		]
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "ip",
+			"value": "localhost"
+		}
+	]
+}
